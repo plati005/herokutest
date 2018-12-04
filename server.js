@@ -20,8 +20,8 @@ io.on('connection', function(socket){
 	}
 	
 	
-    socket.on('move', function(){
-        console.log('client moved');
+    socket.on('move', function(data){
+        console.log('client moved ' + data.x + ', ' + data.y);
     });
 	
 	
@@ -33,45 +33,6 @@ io.on('connection', function(socket){
 		//socket.broadcast.emit('disconnect', {data: socket.id});
 		playerCount--;
     });
-	
-	
-	
-	
-	
-	
-	
-	//TODO: Delete below comments
-	//FOR REFERENCE ONLY//
-	/*
-    socket.on('test-event1', function(){
-        console.log('got test-event1');
-		//socket.emit('keyword', {e:1});
-    });
-
-    socket.on('test-event2', function(data){
-        console.log('got test-event2');
-        console.log(data);
-
-        socket.emit('test-event', {
-            test:12345,
-            test2: 'test emit event STEFAN'
-        });
-		
-    });
-	
-	
-	
-    socket.on('test-event3', function(data, callback){
-        console.log('got test-event3');
-        console.log(data);
-
-        callback({
-            test: 123456,
-            test2: "test3"
-        });
-    });
-	*/
-
 });
 
 
