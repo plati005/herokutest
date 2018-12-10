@@ -4,7 +4,7 @@
   "description": "The SocketIO testserver for the unity3d socketio package",
   "main": "server.js",
   "scripts": {
-	"start": "server.js",
+	"start": "server2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "DasPeTe (daspetemail@gmail.com)",
