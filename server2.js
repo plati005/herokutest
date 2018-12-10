@@ -7,8 +7,7 @@ gameSocket = io.on('connection', function(socket){
 	
 	//This is extra
 	socket.emit('test-event', {
-            test:12345,
-            test2: 'test emit event'
+            data:'test emit event' 
     });
 	//
 	
