@@ -55,6 +55,7 @@ io.on('connection', function(socket){
         console.log('socket disconnected: ' + thisPlayerId);
 		socket.broadcast.emit('disconnected', {id: thisPlayerId});
 		players.splice(players.indexOf(thisPlayerId), 1);
+		
     });
 });
 
