@@ -8,16 +8,20 @@
 	<body>
 		<div id="hi">heroku socket test: </div>
 		<script>
-			//var socket = io('https://glacial-atoll-81614.herokuapp.com/');
-			var socket = io('http://localhost:3000');
+			var socket = io('https://glacial-atoll-81614.herokuapp.com/');
+			//var socket = io('http://localhost:3000');
 			
 			
-			socket.emit('move', "the heroku socket test data");
+			//socket.emit('move', "the heroku socket test data");
 			
 			var changeText = document.getElementById("hi");
 			
 			
 			socket.on('spawn', function(data){
+				changeText.innerHTML+=data.data;
+			});
+			
+			socket.on('test-event', function(data){
 				changeText.innerHTML+=data.data;
 			});
 		</script>
