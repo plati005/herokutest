@@ -49,6 +49,21 @@ io.on('connection', function(socket){
 		socket.broadcast.emit('moved', data);
     });
 	
+	//Attack function sends attack from one player to all others
+    socket.on('attack', function(data){
+        //Attaching thisPlayerId to the data to know who moved
+		data.id = thisPlayerId;
+		console.log('client attacked ' + data.spell + ', ' + data.x + ', ' + data.y);
+		socket.broadcast.emit('attack', data);
+    });
+	
+	//Face function sends facing direction from one player to all others
+    socket.on('face', function(data){
+        //Attaching thisPlayerId to the data to know who moved
+		data.id = thisPlayerId;
+		console.log('client faced ' + data.dir);
+		socket.broadcast.emit('face', data);
+    });
 	
 	//Removes client from player lists when they leave the game
 	socket.on('disconnect', function(){
